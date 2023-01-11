@@ -1,0 +1,6 @@
+FROM node:19.4.0
+WORKDIR /app
+COPY . .
+RUN npm install
+# Not for production use
+CMD ["npm", "start"]
