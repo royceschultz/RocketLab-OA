@@ -29,5 +29,7 @@ services:
     build: ./frontend
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
+    # # Volumes (hot-reload) requore npm install be run manually
+    # volumes:
+    #   - ./frontend:/app
+    restart: unless-stopped
