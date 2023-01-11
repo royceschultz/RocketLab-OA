@@ -78,8 +78,6 @@ class Measurement:
             query['time']['$lte'] = end_time
         # Execute query
         offset = (page-1) * page_size
-        print(query, flush=True)
-        print(offset, page_size, flush=True)
         results = self.db.measurements.find(query).skip(offset)
         if page_size > 0:
             results = results.limit(page_size)
